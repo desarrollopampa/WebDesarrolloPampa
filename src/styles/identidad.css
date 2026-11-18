@@ -12,26 +12,31 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Noto Serif Display";
-  src: url("/tipografias/NotoSerifDisplay-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-display: swap;
-}
-
 :root {
-  --pampa-ciruela: #3B2434;
-  --pampa-arcilla: #A64335;
-  --pampa-durazno: #F0B492;
-  --pampa-arena: #FFF2E5;
-  --pampa-cacao: #634936;
-  --pampa-marca: var(--pampa-ciruela);
-  --pampa-accion: var(--pampa-arcilla);
-  --pampa-secundario: var(--pampa-durazno);
-  --pampa-fondo: var(--pampa-arena);
-  --pampa-texto: var(--pampa-cacao);
-  --pampa-texto-accion: var(--pampa-arena);
-  --pampa-fuente-titulos: "Noto Serif Display", serif;
-  --pampa-fuente-texto: "Ubuntu Sans", system-ui, sans-serif;
-  --pampa-fuente-etiquetas: "Ubuntu Sans Mono", monospace;
+  /* Identidad Oficial: "Campo Eléctrico" */
+  --pampa-grafito: #1D2224;
+  --pampa-lima: #D5EF61;
+  --pampa-niebla: #E4E8E5;
+  --pampa-tiza: #F8FAF5;
+  --pampa-acero: #4C575A;
+
+  /* Aliases funcionales de marca */
+  --pampa-marca: var(--pampa-grafito);
+  --pampa-accion: var(--pampa-lima);
+  --pampa-secundario: var(--pampa-niebla);
+  --pampa-fondo: var(--pampa-tiza);
+  --pampa-texto: var(--pampa-grafito);
+  --pampa-texto-accion: var(--pampa-grafito);
+
+  /* Variables tipográficas */
+  --pampa-fuente-titulos: "Geist", system-ui, sans-serif;
+  --pampa-fuente-texto: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  --pampa-fuente-etiquetas: "Geist Mono", "Ubuntu Sans Mono", monospace;
+
+  /* Compatibilidad con variables previas */
+  --pampa-ciruela: var(--pampa-grafito);
+  --pampa-arcilla: var(--pampa-lima);
+  --pampa-durazno: var(--pampa-lima);
+  --pampa-arena: var(--pampa-tiza);
+  --pampa-cacao: var(--pampa-acero);
 }

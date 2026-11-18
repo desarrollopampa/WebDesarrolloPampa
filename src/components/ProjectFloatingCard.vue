@@ -94,10 +94,10 @@ const imageClasses = computed(() => {
         @error="handleImageError"
       />
 
-      <!-- Fallback elegante con degradado cálido Tierra y Oficio -->
+      <!-- Fallback elegante con degradado neutro -->
       <div
         v-else
-        class="w-full h-full p-5 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[var(--pampa-ciruela)]/10 via-[var(--pampa-durazno)]/15 to-[var(--pampa-arcilla)]/10"
+        class="w-full h-full p-5 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[var(--surface-accent-soft)] via-[var(--surface-card)] to-[var(--surface-accent-soft)]"
       >
         <div
           class="w-11 h-11 rounded-2xl flex items-center justify-center mb-3 border shadow-xs transition-transform duration-500 group-hover:scale-105"

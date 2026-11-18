@@ -128,7 +128,7 @@ onUnmounted(() => {
                     </span>
                   </div>
 
-                  <!-- Título del proyecto con Noto Serif Display -->
+                  <!-- Título del proyecto con Geist -->
                   <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-[var(--ink-primary)] leading-tight">
                     {{ project.name }}
                   </h2>
@@ -220,7 +220,7 @@ onUnmounted(() => {
                   :href="whatsappUrl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-[var(--brand-action)] text-[var(--brand-action-ink)] hover:opacity-90 hover:shadow-[0_0_25px_rgba(166,67,53,0.38)] active:scale-95 transition-all duration-200 shadow-sm cursor-pointer"
+                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-[var(--brand-action)] text-[var(--brand-action-ink)] hover:brightness-95 hover:shadow-[0_0_25px_rgba(213,239,97,0.38)] active:scale-95 transition-all duration-200 shadow-sm cursor-pointer"
                 >
                   <MessageCircle class="w-4 h-4" />
                   <span>Consultar por un sistema similar</span>

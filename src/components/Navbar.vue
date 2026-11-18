@@ -51,10 +51,10 @@ const navLinks = [
           <Moon v-else class="w-4 h-4 text-[var(--brand-primary)]" />
         </button>
 
-        <!-- Botón Hablemos con estilo Arcilla + texto Arena -->
+        <!-- Botón Hablemos con estilo Lima + texto Grafito -->
         <a
           href="#contacto"
-          class="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full bg-[var(--brand-action)] text-[var(--brand-action-ink)] shadow-sm hover:opacity-90 hover:shadow-[0_0_20px_rgba(166,67,53,0.35)] active:scale-95 transition-all duration-200"
+          class="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full bg-[var(--brand-action)] text-[var(--brand-action-ink)] shadow-sm hover:brightness-95 hover:shadow-[0_0_20px_rgba(213,239,97,0.35)] active:scale-95 transition-all duration-200"
         >
           <span>Hablemos</span>
           <ArrowUpRight class="w-3.5 h-3.5" />

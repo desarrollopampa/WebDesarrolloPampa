@@ -116,12 +116,12 @@ const steps = [
         <div
           class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--surface-accent-soft)] text-[var(--ink-primary)] border border-[var(--border-hairline)] mb-4"
         >
-          <Sparkles class="w-3.5 h-3.5 text-[var(--pampa-arcilla)]" />
+          <Sparkles class="w-3.5 h-3.5 text-[var(--brand-action)]" />
           <span>SOLUCIONES A MEDIDA</span>
         </div>
         <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--ink-primary)] leading-[1.15] mb-5">
           Software pensado para ordenar y hacer crecer
-          <span class="text-[var(--pampa-arcilla)]">tu operación</span>
+          <span class="text-[var(--pampa-acero)] dark:text-[var(--pampa-lima)]">tu operación</span>
         </h2>
         <p class="text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed font-normal">
           Partimos de plataformas probadas en producción y las adaptamos a la forma real en que trabaja tu equipo.
@@ -161,7 +161,7 @@ const steps = [
         </div>
         <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--ink-primary)] leading-[1.15] mb-5">
           Trato directo, desarrollo sólido y
-          <span class="text-[var(--pampa-arcilla)]">acompañamiento real</span>
+          <span class="text-[var(--pampa-acero)] dark:text-[var(--pampa-lima)]">acompañamiento real</span>
         </h2>
         <p class="text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed font-normal">
           Sin intermediarios ni soluciones enlatadas rígidas. Trabajamos codo a codo con vos desde el primer día.
@@ -178,12 +178,12 @@ const steps = [
         >
           <!-- Número grande decorativo de fondo -->
           <span
-            class="absolute -top-3 -right-2 text-[80px] font-mono font-black text-[var(--pampa-arcilla)]/8 leading-none select-none pointer-events-none"
+            class="absolute -top-3 -right-2 text-[80px] font-mono font-black text-[var(--pampa-acero)]/10 dark:text-[var(--pampa-lima)]/10 leading-none select-none pointer-events-none"
           >
             {{ step.number }}
           </span>
 
-          <span class="inline-block text-sm font-mono font-bold text-[var(--brand-action)] mb-3 relative z-10">
+          <span class="inline-block text-sm font-mono font-bold text-[var(--pampa-acero)] dark:text-[var(--pampa-lima)] mb-3 relative z-10">
             {{ step.number }}
           </span>
           <h3 class="font-display text-lg font-bold tracking-tight text-[var(--ink-primary)] mb-2 relative z-10">
@@ -314,7 +314,7 @@ const steps = [
               <div class="pt-2">
                 <button
                   type="submit"
-                  class="w-full py-3 px-6 rounded-full text-sm font-semibold bg-[var(--brand-action)] hover:opacity-90 text-[var(--brand-action-ink)] shadow-sm hover:shadow-[0_0_25px_rgba(166,67,53,0.38)] active:scale-98 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer font-sans"
+                  class="w-full py-3 px-6 rounded-full text-sm font-semibold bg-[var(--brand-action)] hover:brightness-95 text-[var(--brand-action-ink)] shadow-sm hover:shadow-[0_0_25px_rgba(213,239,97,0.38)] active:scale-98 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer font-sans"
                 >
                   <MessageCircle class="w-4 h-4" />
                   <span>{{ isSubmitted ? 'Iniciando WhatsApp...' : 'Enviar Consulta por WhatsApp' }}</span>

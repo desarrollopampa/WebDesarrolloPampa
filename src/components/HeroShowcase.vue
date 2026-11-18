@@ -74,9 +74,9 @@ const mobileCards = [
     @mouseleave="handleMouseLeave"
     class="relative w-full min-h-[calc(100vh-80px)] overflow-hidden bg-pampa-grid flex items-center justify-center py-8 xl:py-0"
   >
-    <!-- Resplandor ambiental radial cálido en tono Durazno (atmósfera Tierra y Oficio) -->
+    <!-- Resplandor ambiental radial en tono Lima (atmósfera Campo eléctrico) -->
     <div
-      class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[680px] h-[350px] sm:h-[480px] bg-[var(--pampa-durazno)]/20 dark:bg-[var(--pampa-durazno)]/10 rounded-full blur-[140px]"
+      class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[680px] h-[350px] sm:h-[480px] bg-[var(--pampa-lima)]/18 dark:bg-[var(--pampa-lima)]/12 rounded-full blur-[140px]"
     ></div>
 
     <!-- Trama gráfica orgánica oficial (motivo.svg) -->
@@ -123,20 +123,20 @@ const mobileCards = [
           class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold bg-[var(--surface-accent-soft)] text-[var(--ink-primary)] border border-[var(--border-hairline)] mb-6 backdrop-blur-xs"
         >
           <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--pampa-arcilla)] opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-[var(--pampa-arcilla)]"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--pampa-lima)] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-[var(--pampa-lima)]"></span>
           </span>
-          <span class="tracking-widest uppercase">DESARROLLO PAMPA // TIERRA Y OFICIO</span>
-          <Sparkles class="w-3 h-3 text-[var(--pampa-arcilla)] ml-0.5" />
+          <span class="tracking-widest uppercase">DESARROLLO PAMPA // CAMPO ELÉCTRICO</span>
+          <Sparkles class="w-3 h-3 text-[var(--pampa-lima)] ml-0.5" />
         </div>
 
-        <!-- Título Principal con Noto Serif Display -->
+        <!-- Título Principal con Geist -->
         <h1
           class="font-display text-4xl sm:text-5xl lg:text-5xl 2xl:text-6xl font-bold tracking-tight text-[var(--ink-primary)] leading-[1.08] mb-6"
         >
           Software a medida y sistemas que
           <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--pampa-arcilla)] via-[var(--pampa-durazno)] to-[var(--pampa-arcilla)]"
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--ink-primary)] to-[var(--pampa-acero)] dark:from-[var(--pampa-lima)] dark:to-lime-300"
           >
             impulsan tu negocio
           </span>
@@ -154,7 +154,7 @@ const mobileCards = [
         <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 font-sans">
           <a
             href="#soluciones"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-[var(--brand-action)] text-[var(--brand-action-ink)] hover:opacity-90 hover:shadow-[0_0_30px_rgba(166,67,53,0.38)] active:scale-95 transition-all duration-200 shadow-sm cursor-pointer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-[var(--brand-action)] text-[var(--brand-action-ink)] hover:brightness-95 hover:shadow-[0_0_30px_rgba(213,239,97,0.38)] active:scale-95 transition-all duration-200 shadow-sm cursor-pointer"
           >
             <span>Explorar proyectos</span>
             <ArrowDown class="w-4 h-4" />
@@ -165,7 +165,7 @@ const mobileCards = [
             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-[var(--surface-card)] hover:bg-[var(--surface-accent-soft)] text-[var(--ink-primary)] border border-[var(--border-hairline)] active:scale-95 transition-all duration-200 cursor-pointer"
           >
             <span>Consultar desarrollo</span>
-            <MessageSquare class="w-4 h-4 text-[var(--pampa-arcilla)]" />
+            <MessageSquare class="w-4 h-4 text-[var(--pampa-acero)] dark:text-[var(--pampa-lima)]" />
           </a>
         </div>
 
