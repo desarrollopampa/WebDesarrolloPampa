@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Ubuntu Sans";
+  src: url("../../tipografias/UbuntuSans-Variable.ttf") format("truetype");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu Sans Mono";
+  src: url("../../tipografias/UbuntuSansMono-Variable.ttf") format("truetype");
+  font-weight: 100 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Serif Display";
+  src: url("../../tipografias/NotoSerifDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --pampa-ciruela: #3B2434;
+  --pampa-arcilla: #A64335;
+  --pampa-durazno: #F0B492;
+  --pampa-arena: #FFF2E5;
+  --pampa-cacao: #634936;
+  --pampa-marca: var(--pampa-ciruela);
+  --pampa-accion: var(--pampa-arcilla);
+  --pampa-secundario: var(--pampa-durazno);
+  --pampa-fondo: var(--pampa-arena);
+  --pampa-texto: var(--pampa-cacao);
+  --pampa-texto-accion: var(--pampa-arena);
+  --pampa-fuente-titulos: "Noto Serif Display", serif;
+  --pampa-fuente-texto: "Ubuntu Sans", system-ui, sans-serif;
+  --pampa-fuente-etiquetas: "Ubuntu Sans Mono", monospace;
+}
