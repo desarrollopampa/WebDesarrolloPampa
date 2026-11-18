@@ -5,270 +5,211 @@ export const PROJECTS: Project[] = [
     id: 'pos-lubricentro',
     slug: 'erp-pos-taller-lubricentro',
     name: 'Sistema Integral ERP, POS y Taller',
-    tagline: 'Punto de venta express, facturación electrónica ARCA/AFIP y control operativo para lubricentros y talleres',
+    tagline: 'Atención express en mostrador, facturación electrónica AFIP al instante y control total de lubricentro y taller',
     category: 'erp-pos',
     categoryLabel: 'ERP & Punto de Venta',
-    accentColor: '#10b981',
-    liveUrl: 'https://demo-lubricentro.desarrollopampa.com',
+    accentColor: '#A64335',
     shortDescription:
-      'Solución robusta de punto de venta express y gestión de taller con facturación electrónica nativa AFIP/ARCA, control de stock fraccionado a granel y seguimiento histórico vehicular por patente.',
+      'Punto de venta ágil con lector de códigos de barras, facturación AFIP en el acto, historial vehicular por patente y control de aceites y repuestos.',
     fullDescription:
-      'Diseñado específicamente para el ritmo de trabajo exigente de lubricentros, talleres mecánicos y casas de repuestos automotores. Este ecosistema unifica el cobro en mostrador mediante un POS express optimizado para uso intensivo de teclado y lectores de código de barras, con emisión directa de comprobantes fiscales electrónicos (Facturas A, B, C, notas de crédito/débito con CAE y código QR reglamentario). Gestiona inventario fraccionado en tambores a granel (litros/fracciones) y artículos unitarios, administra cuentas corrientes y cartera de cheques, y automatiza el seguimiento de servicios preventivos vinculados a la patente del vehículo. Su arquitectura híbrida permite operar tanto en la nube SaaS como en un servidor local LAN para garantizar operatividad ininterrumpida ante caídas de conectividad.',
-    deploymentModes: ['Nube SaaS', 'Servidor Local LAN', 'Híbrido con Sincronización'],
-    techStack: {
-      backend: ['NestJS 11', 'Prisma 7', 'PostgreSQL 16', 'Redis 7', 'BullMQ'],
-      frontend: ['Vue 3', 'Vite 7', 'PrimeVue 4', 'TailwindCSS 4', 'Pinia 3'],
-      infrastructure: ['Docker Compose', 'Linux'],
-    },
+      'Diseñado específicamente para el ritmo ágil y exigente de lubricentros, talleres mecánicos y casas de repuestos. Este sistema agiliza la atención en el mostrador para despachar ventas en segundos con lector de códigos de barras, emitiendo facturas electrónicas AFIP oficiales en el acto y sin errores. Permite llevar el historial completo de cada vehículo buscando directamente por número de patente (filtros cambiados, aceites y kilometraje), envía avisos automáticos a los clientes para su próximo mantenimiento preventivo, y controla con exactitud tanto el stock fraccionado de tambores de aceite como los repuestos por unidad. Además, ordena la administración diaria con arqueos de caja por turno, cuentas corrientes de clientes y seguimiento seguro de cheques.',
     highlights: [
       {
-        title: 'POS Express con Atajos y Código de Barras',
+        title: 'Atención Express con Lector de Código de Barras',
         description:
-          'Interfaz de caja de ultra-alta velocidad operada 100% mediante atajos de teclado y lectores ópticos, permitiendo despachar ventas de mostrador en segundos sin tocar el ratón.',
+          'Despachá ventas de mostrador en segundos utilizando lector óptico y atajos de teclado, agilizando las filas en horarios pico.',
       },
       {
-        title: 'Facturación Electrónica AFIP/ARCA Nativa',
+        title: 'Facturación Electrónica AFIP en el Acto',
         description:
-          'Integración directa vía Web Services (WSAA/WSFE) para comprobantes A, B, C con CAE en tiempo real, cálculo automatizado de alícuotas e impresión de ticket fiscal con QR.',
+          'Emisión directa de Facturas A, B, C y notas de crédito oficiales con CAE al instante, con cálculo automático de impuestos e impresión de ticket.',
       },
       {
-        title: 'Historial Vehicular por Patente y Alertas',
+        title: 'Historial Vehicular por Patente y Recordatorios',
         description:
-          'Ficha técnica por dominio con registro de filtros, aceites, kilometraje y disparador automático de recordatorios por WhatsApp/Email para el próximo mantenimiento preventivo.',
+          'Ficha técnica por dominio para consultar qué aceite y filtros se colocaron en visitas anteriores, enviando avisos de próximo cambio de aceite.',
       },
       {
-        title: 'Stock Fraccionado a Granel y Tambores',
+        title: 'Control Exacto de Aceites Sueltos y Repuestos',
         description:
-          'Control bidimensional de inventario: despacho fraccionado en litros directamente desde tambores y venta unitaria cerrada, con costeo FIFO/PPP y mermas controladas.',
+          'Seguimiento en tiempo real de litros despachados desde tambores a granel y repuestos por unidad, evitando faltantes y desfasajes de mercadería.',
       },
       {
-        title: 'Tesorería, Múltiples Cajas y Cartera de Cheques',
+        title: 'Cajas Diarias, Cuentas Corrientes y Cheques',
         description:
-          'Arqueos ciegos por turno, conciliación de medios de pago (efectivo, transferencias, tarjetas), control de cuentas corrientes de clientes y seguimiento del ciclo de vida de cheques y eCheqs.',
+          'Arqueos claros por turno, control de cobros con efectivo, transferencias y tarjetas, seguimiento de deudas de clientes habituales y cartera de cheques.',
       },
-      {
-        title: 'Modalidad Híbrida: Nube SaaS o Servidor Local LAN',
-        description:
-          'Capacidad de operar de forma 100% autónoma en la red local del taller sin depender de conexión a Internet, sincronizando las operaciones de forma segura con la nube central.',
-      },
-    ],
-    metrics: [
-      { label: 'Tiempo de emisión fiscal', value: '< 2.5 seg' },
-      { label: 'Disponibilidad offline', value: '100% Operativo LAN' },
-      { label: 'Reducción tiempo mostrador', value: '-45%' },
-      { label: 'Precisión de inventario', value: '99.9%' },
     ],
     widgetType: 'pos-lubricentro',
-    screenshots: [
-      {
-        src: '/projects/pos-ventas.webp',
-        caption: 'Punto de venta express con atajos y lectura óptica de barras',
-      },
-      {
-        src: '/projects/pos-taller.webp',
-        caption: 'Ficha técnica vehicular por patente con historial de lubricación',
-      },
-      {
-        src: '/projects/pos-arca.webp',
-        caption: 'Emisión instantánea de facturas electrónicas AFIP/ARCA con CAE',
-      },
-    ],
+    cardImage: '/projects/lubricentro.png',
+    cardImagePosition: 'object-center',
   },
   {
     id: 'miagenda-booking',
     slug: 'miagenda-saas-turnos-cobros',
-    name: 'MiAgenda — Plataforma SaaS de Turnos y Cobros',
-    tagline: 'Motor de disponibilidad en tiempo real, cobro de señas con MercadoPago y notificaciones omnicanal',
+    name: 'MiAgenda — Plataforma de Turnos y Cobros Online',
+    tagline: 'Reservas online las 24 hs, cobro de señas con MercadoPago y recordatorios automáticos por WhatsApp',
     category: 'saas',
     categoryLabel: 'SaaS & Reservas',
-    accentColor: '#3b82f6',
-    liveUrl: 'https://miagenda.desarrollopampa.com',
+    accentColor: '#6B3A5A',
+    liveUrl: 'https://miagenda.site',
     shortDescription:
-      'Plataforma SaaS multi-tenant de agendamiento online con motor de concurrencia en Redis, cobro automático de turnos y señas vía MercadoPago Marketplace y recordatorios inteligentes por WhatsApp y SMS.',
+      'Tus clientes reservan turnos solos desde un link simple las 24 hs, pagan la seña por MercadoPago y reciben confirmación automática por WhatsApp.',
     fullDescription:
-      'MiAgenda automatiza de punta a punta la agenda y recaudación de profesionales, consultorios, centros de estética, barberías y canchas deportivas. Cuenta con un motor de disponibilidad de alta concurrencia respaldado por Redis que procesa calendarios semanales, bloqueos manuales, excepciones horarias y sincronización bidireccional con Google Calendar. Su integración profunda con MercadoPago Marketplace vía OAuth permite a cada negocio cobrar turnos completos o señas con split de fondos directo y verificación estricta de webhooks HMAC. A través de colas de mensajería con BullMQ, orquesta el envío oportuno de confirmaciones y recordatorios por WhatsApp, SMS (Twilio), emails dinámicos y WebPush, reduciendo drásticamente el ausentismo no avisado.',
-    deploymentModes: ['Multi-Tenant Cloud', 'Docker Container', 'PWA Instalable'],
-    techStack: {
-      backend: ['NestJS 11', 'Prisma', 'MySQL 8', 'Redis', 'BullMQ', 'Socket.io'],
-      frontend: ['Next.js 16', 'React 19', 'Redux Toolkit', 'Material UI'],
-      infrastructure: ['Docker Compose', 'Nginx', 'PM2', 'Linux'],
-    },
+      'MiAgenda elimina los mensajes interminables de ida y vuelta para coordinar horarios en salones de estética, consultorios, barberías, canchas deportivas y profesionales independientes. Proporciona a cada negocio una página web limpia y personalizada donde los clientes eligen profesional, servicio y horario disponible en tiempo real desde cualquier celular las 24 horas del día. Para asegurar la asistencia y proteger el tiempo del profesional, permite cobrar señas previas o turnos completos mediante MercadoPago con acreditación directa. Además, se sincroniza automáticamente con el calendario de Google Calendar y envía confirmaciones y recordatorios por WhatsApp para reducir ausencias y cancelaciones de último momento.',
     highlights: [
       {
-        title: 'Motor de Disponibilidad en Tiempo Real con Redis',
+        title: 'Reservas Online 24/7 desde un Link Simple',
         description:
-          'Cálculo ultrarrápido de franjas horarias libres teniendo en cuenta horarios por profesional, servicios simultáneos, excepciones por feriados y sincronización activa con Google Calendar.',
+          'Tus clientes eligen fecha, horario y profesional disponible desde un enlace directo y ágil, sin esperas ni mensajes de consulta manual.',
       },
       {
-        title: 'Reserva Atómica con Bloqueo Temporal',
+        title: 'Cobro de Señas Online con MercadoPago',
         description:
-          'Mecanismo transaccional anti-colisiones que bloquea temporalmente el turno por 10 minutos mientras el usuario realiza el pago, liberándolo automáticamente si la transacción no se completa.',
+          'Asegurá cada turno reservado cobrando una seña previa o el valor total con tarjeta o dinero en cuenta, acreditando los fondos en tu cuenta.',
       },
       {
-        title: 'MercadoPago Marketplace (OAuth) y Señas',
+        title: 'Reducción Drástica del Ausentismo por WhatsApp',
         description:
-          'Conexión nativa de las cuentas de cobro de cada prestador con split de pagos, gestión de comisiones de plataforma, soporte para suscripciones recurrentes y webhooks firmados con HMAC.',
+          'Envío automatizado de confirmaciones y recordatorios previos a la cita para que ningún cliente olvide su horario ni deje vacía la agenda.',
       },
       {
-        title: 'Notificaciones Multicanal Automatizadas',
+        title: 'Sincronización Automática con Google Calendar',
         description:
-          'Disparo programado de alertas de confirmación, reprogramación y recordatorio 24h/2h antes vía WhatsApp, SMS con Twilio, Email transaccional y WebSockets en tiempo real.',
+          'Bloqueo instantáneo de horarios ocupados y actualización con el calendario personal de cada profesional para evitar superposiciones de turnos.',
       },
       {
-        title: 'PWA Instalable Offline',
+        title: 'Panel Simple de Profesionales, Servicios y Tarifas',
         description:
-          'Aplicación web progresiva lista para instalar en dispositivos móviles y de escritorio, con soporte de caché offline para consultar agenda de citas sin conectividad.',
+          'Configurá horarios de atención, excepciones por feriados, servicios prestados y precios de cada integrante de tu equipo en pocos clics.',
       },
-    ],
-    metrics: [
-      { label: 'Reducción de ausentismo', value: 'Hasta 68%' },
-      { label: 'Tiempo de reserva online', value: '< 45 seg' },
-      { label: 'Capacidad de concurrencia', value: '+5.000 req/s' },
-      { label: 'SLA de plataforma', value: '99.95%' },
     ],
     widgetType: 'miagenda-booking',
-    screenshots: [
-      {
-        src: '/projects/miagenda-turnos.webp',
-        caption: 'Selector de turnos en tiempo real con motor de disponibilidad en Redis',
-      },
-      {
-        src: '/projects/miagenda-pagos.webp',
-        caption: 'Cobro de señas automatizado mediante MercadoPago Marketplace OAuth',
-      },
-    ],
+    cardImage: '/projects/miagenda.jpg',
+    cardImagePosition: 'object-top',
   },
   {
     id: 'rive-store',
     slug: 'rive-streetwear-ecommerce',
-    name: 'RIVE — Catálogo E-Commerce & Panel Autoadministrable',
-    tagline: 'Tienda online streetwear industrial minimalista, checkout a WhatsApp y panel autoadministrable',
+    name: 'RIVE — Tienda Online y Catálogo Autoadministrable',
+    tagline: 'Catálogo con stock por talle, pedido listo a WhatsApp y panel simple para actualizar precios y promociones',
     category: 'ecommerce',
     categoryLabel: 'E-Commerce',
-    accentColor: '#f59e0b',
-    liveUrl: 'https://rive.desarrollopampa.com',
+    accentColor: '#8C4E31',
     shortDescription:
-      'Catálogo online de alto impacto visual y velocidad extrema con variantes complejas de producto, cierre de carrito conversacional vía WhatsApp y panel autogestivo con compresión WebP en Sharp.',
+      'Catálogo online de alto impacto con variantes por talle, armado de pedidos directo a WhatsApp y panel autoadministrable sin intermediarios.',
     fullDescription:
-      'RIVE combina la potencia estética del diseño streetwear industrial con una arquitectura tecnológica de carga ultrarrápida (Core Web Vitals 99+). Construido sobre Next.js 15 y React 19, aprovecha Server Actions para una navegación fluida sin recargas. Incorpora un esquema de variantes independientes por talle y color con control estricto de inventario. Su proceso de checkout elimina la fricción tradicional dirigiendo los pedidos directamente a WhatsApp con un formato estructurado y trazabilidad de conversión. En el panel de control, los administradores cuentan con ordenamiento drag & drop del catálogo, cálculo dinámico de precios de venta mediante porcentaje de margen sobre costo y un pipeline automatizado de procesamiento de fotografías a WebP mediante Sharp.',
-    deploymentModes: ['Cloud VPS', 'Docker Container', 'Edge CDN'],
-    techStack: {
-      backend: ['Next.js Server Actions', 'Prisma', 'PostgreSQL', 'NextAuth 5'],
-      frontend: ['Next.js 15', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'Framer Motion', 'Zustand'],
-      infrastructure: ['GitHub Actions CI/CD', 'PM2', 'Docker', 'Linux'],
-    },
+      'Una tienda online pensada para marcas de indumentaria, calzado y comercios que buscan exhibir sus productos con una imagen profesional y vender de forma directa sin comisiones abusivas. El catálogo presenta las colecciones de forma visual e intuitiva, con selección clara de talles, colores y stock real para evitar vender prendas no disponibles. Los compradores arman su carrito en segundos y el sistema genera automáticamente un pedido cerrado y ordenado listo para enviar a WhatsApp, facilitando un cobro y entrega ágiles. El dueño de la marca cuenta con un panel de control muy fácil de usar para cargar nuevos productos, aplicar márgenes de ganancia sobre costos y actualizar precios o banners sin depender de nadie.',
     highlights: [
       {
-        title: 'Estética Streetwear Industrial Minimalista',
+        title: 'Colecciones con Stock Actualizado por Talle',
         description:
-          'Diseño editorial de vanguardia con tipografías monoespaciadas, microinteracciones a 60 FPS y una experiencia visual inmersiva que eleva el valor percibido de marca.',
+          'Exhibición visual de cada producto con fotos en alta calidad y disponibilidad en tiempo real por talle y color, evitando pedidos de prendas agotadas.',
       },
       {
-        title: 'Variantes por Talle con Stock Independiente',
+        title: 'Cierre de Pedido Listo por WhatsApp',
         description:
-          'Gestión granular de inventario por talle y color con detección automática de quiebres de stock y desactivación inmediata de opciones no disponibles.',
+          'El cliente arma su compra y envía un mensaje listo con el detalle exacto de artículos, talles elegidos y total a abonar para una atención ágil.',
       },
       {
-        title: 'Cierre de Carrito Automatizado por WhatsApp',
+        title: 'Actualización Rápida de Precios y Márgenes',
         description:
-          'Compilación del carrito en un mensaje preformateado listo para enviar por WhatsApp, incluyendo SKU, variantes elegidas, total calculado y parámetros UTM de seguimiento.',
+          'Panel para ajustar precios de venta al público en pocos segundos aplicando porcentaje de margen sobre costo, ideal para mantener listas al día.',
       },
       {
-        title: 'Cálculo Dinámico de Precios por Costo y Margen',
+        title: 'Carga Autogestiva de Productos y Banners',
         description:
-          'Herramienta en panel que calcula el precio al público automáticamente al ingresar el costo del producto y el margen deseado, facilitando ajustes masivos por inflación.',
+          'Subí fotos, creá promociones y organizá el orden de tus colecciones destacadas sin necesidad de conocimientos técnicos de programación.',
       },
       {
-        title: 'Ordenamiento Drag & Drop de Catálogo',
+        title: 'Velocidad Inmediata de Carga en Celulares',
         description:
-          'Reorganización visual e intuitiva de productos destacados y colecciones con persistencia instantánea del orden de exhibición.',
+          'Navegación ultra fluida optimizada para compras desde el teléfono móvil, asegurando que tus clientes naveguen y elijan sin trabas ni demoras.',
       },
-      {
-        title: 'Conversión Automática a WebP con Sharp & SEO Dinámico',
-        description:
-          'Optimización al vuelo de imágenes reduciendo el peso hasta en un 75%, complementada con metadatos Open Graph y microformatos Schema.org (JSON-LD Product).',
-      },
-    ],
-    metrics: [
-      { label: 'Rendimiento Lighthouse', value: '99 / 100' },
-      { label: 'Conversión checkout', value: '+42%' },
-      { label: 'Compresión WebP Sharp', value: '-72% peso' },
-      { label: 'Velocidad First Contentful Paint', value: '< 600ms' },
     ],
     widgetType: 'rive-store',
-    screenshots: [
-      {
-        src: '/projects/rive-catalogo.webp',
-        caption: 'Catálogo de diseño industrial minimalista con filtros dinámicos',
-      },
-      {
-        src: '/projects/rive-checkout.webp',
-        caption: 'Cierre de pedidos por WhatsApp con desglose de talles y atribución',
-      },
-    ],
+    cardImage: '/projects/rive.jpg',
+    cardImagePosition: 'object-top scale-[1.16] origin-top',
   },
   {
     id: 'travel-agency',
     slug: 'travel-agency-enterprise-custom',
-    name: 'Plataformas a Medida para Agencias de Viajes y Empresas',
-    tagline: 'Sistemas a medida para gestión operativa turística, reservas mayoristas, itinerarios dinámicos y finanzas',
+    name: 'Sistemas a Medida para Agencias de Viajes y Empresas',
+    tagline: 'Centralización de reservas turísticas, generador de itinerarios para clientes y cuentas corrientes bimonetarias',
     category: 'custom',
     categoryLabel: 'Software a Medida',
-    accentColor: '#8b5cf6',
-    liveUrl: 'https://travel.desarrollopampa.com',
+    accentColor: '#533347',
     shortDescription:
-      'Desarrollo a medida para agencias turísticas y empresas de servicios: unificación operativa de reservas hoteleras y aéreas, generador de itinerarios interactivos y cuentas corrientes bimonetarias.',
+      'Sistema a medida para unificar reservas de viajes, armar itinerarios dinámicos para pasajeros y llevar cuentas corrientes en pesos y dólares.',
     fullDescription:
-      'Solución corporativa construida exclusivamente para resolver las complejidades operativas de agencias de viajes mayoristas, receptivas y empresas corporativas. La plataforma centraliza el ciclo completo de reservas turísticas (aéreos, hotelería, excursiones y traslados privados) con control riguroso de confirmaciones y fechas límite. Permite confeccionar cotizaciones e itinerarios dinámicos día por día, accesibles para el cliente final mediante portal web interactivo o exportables en PDF de diseño corporativo. Además, integra un módulo de tesorería y cuentas corrientes bimonetarias (ARS y USD) para pasajeros y operadores mayoristas, con liquidación automatizada de comisiones y conciliación bancaria adaptada a las reglas de negocio del cliente.',
-    deploymentModes: ['Dedicated Cloud', 'On-Premise', 'Private VPN'],
-    techStack: {
-      backend: ['NestJS 11', 'Prisma', 'PostgreSQL', 'Redis'],
-      frontend: ['Vue 3', 'TypeScript', 'Tailwind CSS 4', 'PrimeVue'],
-      infrastructure: ['Docker', 'Linux VPS', 'Automated Backups'],
-    },
+      'Desarrollo personalizado para resolver la operativa diaria de agencias de turismo, operadores receptivos y empresas de servicios corporativos. El sistema reemplaza por completo el desorden de planillas de cálculo dispersas, centralizando en un único lugar las reservas de vuelos, alojamientos, excursiones y traslados privados. Permite a los agentes armar cotizaciones e itinerarios día por día en minutos, entregándole al pasajero un enlace interactivo o un documento formal para su viaje. Incluye un módulo financiero con cuentas corrientes en pesos y dólares para pasajeros y proveedores, liquidación automática de comisiones para el equipo comercial y alertas de vencimientos para no perder ninguna reserva.',
     highlights: [
       {
-        title: 'Gestión Operativa Integral de Reservas',
+        title: 'Centralización Total de Reservas Turísticas',
         description:
-          'Tablero centralizado para coordinar servicios aéreos, hoteleros y terrestres, con seguimiento de estados de confirmación, emisión de vouchers y alertas de plazos de pago.',
+          'Tablero unificado para coordinar servicios aéreos, hoteleros y excursiones con control estricto de confirmaciones, vouchers y fechas límite de pago.',
       },
       {
-        title: 'Constructor y Armado de Itinerarios Dinámicos',
+        title: 'Armado Rápido de Itinerarios Claros para Pasajeros',
         description:
-          'Herramienta visual para armar itinerarios día a día con cálculo dinámico de costos y márgenes, generando una vista web interactiva para el pasajero y exportación a PDF profesional.',
+          'Confeccioná cronogramas día a día con detalle de actividades y costos, compartiendo un enlace interactivo o un resumen formal con el cliente.',
       },
       {
-        title: 'Cuentas Corrientes Bimonetarias (ARS / USD)',
+        title: 'Cuentas Corrientes en Pesos y Dólares sin Errores',
         description:
-          'Manejo estricto de saldos en moneda dual, cobros parciales, aplicación de cotizaciones cambiarias oficiales o financieras y seguimiento de deudas con operadores mayoristas.',
+          'Administración ordenada de saldos en moneda dual, cobros parciales, cotizaciones del día y control riguroso de deudas con operadores y prestadores.',
       },
       {
-        title: 'Automatización Administrativa y Reglas de Negocio',
+        title: 'Automatización del Seguimiento Administrativo',
         description:
-          'Eliminación de planillas de cálculo dispersas mediante flujos automáticos de liquidación de comisiones a vendedores, alertas de cobro y conciliación financiera integral.',
+          'Cálculo automático de comisiones por vendedor, alertas de vencimiento de señas y conciliación de cobros para ahorrar horas de trabajo de oficina.',
       },
       {
-        title: 'Arquitectura Segura y Adaptabilidad Total',
+        title: 'Adaptabilidad a los Circuitos de tu Negocio',
         description:
-          'Desarrollo a medida con permisos basados en roles (RBAC), registro de auditoría de modificaciones y despliegue en infraestructura dedicada con copias de seguridad automatizadas.',
+          'Diseñado a la medida exacta de tus procesos operativos y comerciales, con perfiles y permisos específicos para cada integrante del equipo.',
       },
-    ],
-    metrics: [
-      { label: 'Ahorro de tiempo administrativo', value: '75%' },
-      { label: 'Conciliación contable', value: '100% Automatizada' },
-      { label: 'Tiempo de cotización', value: '< 5 minutos' },
-      { label: 'Control de cobros', value: 'Cero discrepancias' },
     ],
     widgetType: 'travel-agency',
-    screenshots: [
+    // cardImage: '/projects/viajes.png', // Preparado para cuando se cargue la captura
+  },
+  {
+    id: 'farmacias-turnos',
+    slug: 'turnos-farmacias',
+    name: 'Turnos de Farmacias',
+    tagline: 'Consulta inmediata de farmacias de turno y gestión de cronogramas mensuales',
+    category: 'saas',
+    categoryLabel: 'Salud & Turnos Públicos',
+    accentColor: '#3B5B52',
+    liveUrl: 'https://sosafarmacia.com.ar/',
+    shortDescription:
+      'Plataforma pública de consulta rápida para vecinos y panel administrativo para organizar cronogramas mensuales de turnos.',
+    fullDescription:
+      'Sistema pensado para comunidades, colegios farmacéuticos y redes de farmacias que necesitan informar de forma clara y sin errores qué farmacia está de guardia en cada momento. Combina una página pública ultrarrápida para consultar desde el celular con un panel simple para cargar y actualizar los cronogramas de todo el mes.',
+    highlights: [
       {
-        src: '/projects/travel-itinerario.webp',
-        caption: 'Generador visual de itinerarios día a día con cotización multi-moneda',
+        title: 'Consulta inmediata "Ahora de Turno"',
+        description:
+          'Muestra automáticamente qué farmacia está atendiendo en ese preciso momento, respetando los horarios reales de cambio de guardia (apertura y cierre).',
       },
       {
-        src: '/projects/travel-finanzas.webp',
-        caption: 'Panel de cuentas corrientes bimonetarias ARS/USD y comisiones',
+        title: 'Contacto y ubicación en un toque',
+        description:
+          'Permite al vecino abrir el mapa para llegar, llamar por teléfono o escribir directo por WhatsApp desde el celular.',
+      },
+      {
+        title: 'Calendario mensual interactivo',
+        description:
+          'Cualquier persona puede consultar qué farmacia estará de turno en los próximos días del mes de forma clara y visual.',
+      },
+      {
+        title: 'Panel de gestión y cronogramas listos',
+        description:
+          'Administración centralizada de farmacias con ubicación en mapa, carga rápida de turnos mensuales y generación de cronogramas listos para compartir o imprimir.',
       },
     ],
+    widgetType: 'farmacias-turnos',
+    cardImage: '/projects/farmacias.png',
+    cardImagePosition: 'object-top',
   },
 ]

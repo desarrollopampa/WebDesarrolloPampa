@@ -20,6 +20,7 @@ export type ProjectWidgetType =
   | 'miagenda-booking'
   | 'rive-store'
   | 'travel-agency'
+  | 'farmacias-turnos'
 
 export interface ProjectTechStack {
   backend: string[]
@@ -38,14 +39,16 @@ export interface Project {
   liveUrl?: string
   shortDescription: string
   fullDescription: string
-  deploymentModes: string[]
-  techStack: {
+  deploymentModes?: string[]
+  techStack?: {
     backend: string[]
     frontend: string[]
     infrastructure: string[]
   }
   highlights: ProjectHighlight[]
-  metrics: ProjectMetric[]
+  metrics?: ProjectMetric[]
   widgetType: ProjectWidgetType
   screenshots?: ProjectScreenshot[]
+  cardImage?: string
+  cardImagePosition?: string
 }

@@ -1,3 +1,4 @@
+@import "./styles/identidad.css";
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -7,44 +8,84 @@ html {
 }
 
 :root {
-  --pampa-emerald: #10b981;
-  --pampa-forest: #064e3b;
-  --pampa-glow: rgba(16, 185, 129, 0.18);
+  /* Arquitectura de Variables CSS Semánticas (Modo Claro Cálido "Arena") */
+  --surface-canvas: var(--pampa-arena);
+  --surface-card: rgba(255, 255, 255, 0.76);
+  --surface-accent-soft: color-mix(in srgb, var(--pampa-durazno) 32%, transparent);
+  --ink-primary: var(--pampa-ciruela);
+  --ink-secondary: var(--pampa-cacao);
+  --brand-primary: var(--pampa-ciruela);
+  --brand-action: var(--pampa-arcilla);
+  --brand-action-ink: var(--pampa-arena);
+  --brand-secondary: var(--pampa-durazno);
+  --border-hairline: color-mix(in srgb, var(--pampa-ciruela) 14%, transparent);
+}
+
+:where(.dark, .dark *),
+.dark {
+  /* Arquitectura de Variables CSS Semánticas (Modo Oscuro Profundo "Ciruela") */
+  --surface-canvas: #1A0F17;
+  --surface-card: rgba(43, 26, 38, 0.68);
+  --surface-accent-soft: color-mix(in srgb, var(--pampa-durazno) 16%, transparent);
+  --ink-primary: var(--pampa-arena);
+  --ink-secondary: #DEC9BA;
+  --brand-primary: var(--pampa-durazno);
+  --brand-action: var(--pampa-arcilla);
+  --brand-action-ink: var(--pampa-arena);
+  --brand-secondary: var(--pampa-durazno);
+  --border-hairline: color-mix(in srgb, var(--pampa-durazno) 18%, transparent);
 }
 
 @theme {
-  --color-pampa-emerald: var(--pampa-emerald);
-  --color-pampa-forest: var(--pampa-forest);
-  --color-pampa-glow: var(--pampa-glow);
+  --font-display: var(--pampa-fuente-titulos);
+  --font-sans: var(--pampa-fuente-texto);
+  --font-mono: var(--pampa-fuente-etiquetas);
+
+  --color-surface-canvas: var(--surface-canvas);
+  --color-surface-card: var(--surface-card);
+  --color-surface-accent-soft: var(--surface-accent-soft);
+  --color-ink-primary: var(--ink-primary);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-action: var(--brand-action);
+  --color-brand-action-ink: var(--brand-action-ink);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-border-hairline: var(--border-hairline);
+
+  --color-pampa-ciruela: var(--pampa-ciruela);
+  --color-pampa-arcilla: var(--pampa-arcilla);
+  --color-pampa-durazno: var(--pampa-durazno);
+  --color-pampa-arena: var(--pampa-arena);
+  --color-pampa-cacao: var(--pampa-cacao);
 }
 
-/* Cuadrícula técnica sutil de 48px x 48px */
+/* Cuadrícula técnica sutil de 48px x 48px basada en identidad Pampa */
 .bg-pampa-grid {
   background-size: 48px 48px;
   background-image:
-    linear-gradient(to right, rgba(16, 185, 129, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(16, 185, 129, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, var(--pampa-ciruela) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--pampa-ciruela) 6%, transparent) 1px, transparent 1px);
 }
 
 :where(.dark, .dark *) .bg-pampa-grid,
 .dark .bg-pampa-grid {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, var(--pampa-durazno) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--pampa-durazno) 6%, transparent) 1px, transparent 1px);
 }
 
-/* Efecto glassmorphism (estilo Lightspark en claro, estilo Pryzm en oscuro) */
+/* Efecto glassmorphism adaptado a la identidad Tierra y Oficio */
 .glass-card {
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(229, 231, 235, 0.8);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  box-shadow: 0 4px 24px -2px rgba(99, 73, 54, 0.08);
 }
 
 :where(.dark, .dark *) .glass-card,
 .dark .glass-card {
-  background-color: rgba(15, 23, 20, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.4);
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.45);
 }

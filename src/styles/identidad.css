@@ -1,20 +1,20 @@
 @font-face {
   font-family: "Ubuntu Sans";
-  src: url("../../tipografias/UbuntuSans-Variable.ttf") format("truetype");
+  src: url("/tipografias/UbuntuSans-Variable.ttf") format("truetype");
   font-weight: 100 800;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Ubuntu Sans Mono";
-  src: url("../../tipografias/UbuntuSansMono-Variable.ttf") format("truetype");
+  src: url("/tipografias/UbuntuSansMono-Variable.ttf") format("truetype");
   font-weight: 100 700;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Noto Serif Display";
-  src: url("../../tipografias/NotoSerifDisplay-Bold.ttf") format("truetype");
+  src: url("/tipografias/NotoSerifDisplay-Bold.ttf") format("truetype");
   font-weight: 700;
   font-display: swap;
 }

@@ -7,7 +7,7 @@ import ProjectDetailDrawer from './components/ProjectDetailDrawer.vue'
 
 <template>
   <div
-    class="min-h-screen bg-[#FAFAFA] text-slate-900 dark:bg-[#090D0B] dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-emerald-500 selection:text-white"
+    class="min-h-screen bg-[var(--surface-canvas)] text-[var(--ink-primary)] transition-colors duration-300 antialiased selection:bg-[var(--brand-action)] selection:text-[var(--brand-action-ink)] font-sans"
   >
     <!-- Barra de Navegación Superior Sticky -->
     <Navbar />

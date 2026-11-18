@@ -30,80 +30,113 @@ const getParallaxStyle = (depth: number) => {
   if (typeof window !== 'undefined' && window.innerWidth < 1280) {
     return {}
   }
-  const maxDisplacement = 12
+  // Desplazamiento máximo ultra sutil de ±6px para no alterar las distancias mínimas
+  const maxDisplacement = 6
   const tx = mouseOffset.value.x * maxDisplacement * depth
   const ty = mouseOffset.value.y * maxDisplacement * depth
   return {
     transform: `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0)`,
     willChange: 'transform',
-    transition: 'transform 0.18s cubic-bezier(0.2, 0, 0, 1)',
+    transition: 'transform 0.2s cubic-bezier(0.2, 0, 0, 1)',
   }
 }
 
-// Configuración espacial para las 4 tarjetas flotantes
-const cardConfigs = [
+// Configuración de las 5 tarjetas para grilla Mobile / Tablet (< xl)
+const mobileCards = [
   {
-    // Arriba-Izquierda: ERP POS Taller
     project: PROJECTS[0]!,
-    wrapperClass: 'xl:absolute xl:top-6 xl:left-4 2xl:left-6 xl:w-[310px] z-10',
-    depth: 0.85,
+    aspectClass: 'aspect-[16/10]',
   },
   {
-    // Arriba-Derecha: MiAgenda SaaS
     project: PROJECTS[1]!,
-    wrapperClass: 'xl:absolute xl:top-6 xl:right-4 2xl:right-6 xl:w-[310px] z-10',
-    depth: 1.15,
+    aspectClass: 'aspect-[4/3]',
   },
   {
-    // Abajo-Izquierda: RIVE Store
     project: PROJECTS[2]!,
-    wrapperClass: 'xl:absolute xl:bottom-8 xl:left-4 2xl:left-6 xl:w-[310px] z-10',
-    depth: 1.05,
+    aspectClass: 'aspect-[4/5]',
   },
   {
-    // Abajo-Derecha: Travel Ops Enterprise
     project: PROJECTS[3]!,
-    wrapperClass: 'xl:absolute xl:bottom-8 xl:right-4 2xl:right-6 xl:w-[310px] z-10',
-    depth: 0.9,
+    aspectClass: 'aspect-[16/10]',
+  },
+  {
+    project: PROJECTS[4]!,
+    aspectClass: 'aspect-[16/10]',
   },
 ]
 </script>
 
 <template>
   <section
+    id="inicio"
     ref="heroRef"
     @mousemove="handleMouseMove"
     @mouseleave="handleMouseLeave"
-    class="relative min-h-[calc(100vh-4rem)] w-full overflow-hidden bg-pampa-grid flex items-center justify-center py-12 xl:py-24"
+    class="relative w-full min-h-[calc(100vh-80px)] overflow-hidden bg-pampa-grid flex items-center justify-center py-8 xl:py-0"
   >
-    <!-- Resplandor ambiental radial sutil en tonos Verde Pampa (atmósfera Pryzm) -->
+    <!-- Resplandor ambiental radial cálido en tono Durazno (atmósfera Tierra y Oficio) -->
     <div
-      class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[680px] h-[350px] sm:h-[480px] bg-emerald-500/12 dark:bg-emerald-500/16 rounded-full blur-[140px]"
+      class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[680px] h-[350px] sm:h-[480px] bg-[var(--pampa-durazno)]/20 dark:bg-[var(--pampa-durazno)]/10 rounded-full blur-[140px]"
     ></div>
 
-    <!-- Contenedor Espacial Principal -->
-    <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Bloque Central de Contenido -->
-      <div class="max-w-2xl mx-auto text-center relative z-20">
-        <!-- Pill Superior -->
+    <!-- Trama gráfica orgánica oficial (motivo.svg) -->
+    <img
+      src="/brand/motivo.svg"
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] max-w-none opacity-20 dark:opacity-15 mix-blend-multiply dark:mix-blend-screen"
+    />
+
+    <!-- Contenedor Principal: Grilla Espacial de 3 Columnas Anti-Colisión -->
+    <div
+      class="relative w-full max-w-[1480px] mx-auto px-6 xl:px-10 min-h-[calc(100vh-80px)] py-12 grid grid-cols-1 xl:grid-cols-[1fr_minmax(460px,520px)_1fr] items-center gap-8"
+    >
+      <!-- Columna 1 (Izquierda — 2 tarjetas: Lubricentro y RIVE) -->
+      <div class="hidden xl:flex flex-col justify-between self-stretch py-4 gap-16">
+        <!-- Arriba (self-start): Card 1 (Lubricentro ERP/POS) -->
         <div
-          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 mb-6 backdrop-blur-xs"
+          class="self-start w-[245px] 2xl:w-[270px]"
+          :style="getParallaxStyle(0.85)"
         >
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span>Agencia de Software & Productos SaaS · Argentina</span>
-          <Sparkles class="w-3 h-3 text-emerald-500 ml-0.5" />
+          <ProjectFloatingCard
+            :project="PROJECTS[0]!"
+            aspect-class="aspect-[16/10]"
+          />
         </div>
 
-        <!-- Título Principal -->
+        <!-- Abajo (self-end mr-4): Card 3 (RIVE E-Commerce) -->
+        <div
+          class="self-end mr-4 w-[190px] 2xl:w-[210px]"
+          :style="getParallaxStyle(1.05)"
+        >
+          <ProjectFloatingCard
+            :project="PROJECTS[2]!"
+            aspect-class="aspect-[4/5]"
+          />
+        </div>
+      </div>
+
+      <!-- Columna 2 (Centro — Texto Principal + 5ª Tarjeta Farmacias en Desktop) -->
+      <div class="flex flex-col items-center text-center max-w-[520px] mx-auto z-20">
+        <!-- Pill Superior con tipografía mono -->
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold bg-[var(--surface-accent-soft)] text-[var(--ink-primary)] border border-[var(--border-hairline)] mb-6 backdrop-blur-xs"
+        >
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--pampa-arcilla)] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-[var(--pampa-arcilla)]"></span>
+          </span>
+          <span class="tracking-widest uppercase">DESARROLLO PAMPA // TIERRA Y OFICIO</span>
+          <Sparkles class="w-3 h-3 text-[var(--pampa-arcilla)] ml-0.5" />
+        </div>
+
+        <!-- Título Principal con Noto Serif Display -->
         <h1
-          class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 leading-[1.08] mb-6"
+          class="font-display text-4xl sm:text-5xl lg:text-5xl 2xl:text-6xl font-bold tracking-tight text-[var(--ink-primary)] leading-[1.08] mb-6"
         >
           Software a medida y sistemas que
           <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-400 dark:from-emerald-400 dark:via-emerald-300 dark:to-teal-300"
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--pampa-arcilla)] via-[var(--pampa-durazno)] to-[var(--pampa-arcilla)]"
           >
             impulsan tu negocio
           </span>
@@ -111,17 +144,17 @@ const cardConfigs = [
 
         <!-- Subtítulo Claro -->
         <p
-          class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed mb-8 max-w-xl mx-auto font-normal"
+          class="text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed mb-8 max-w-md 2xl:max-w-xl mx-auto font-normal font-sans"
         >
           Desarrollamos plataformas SaaS, sistemas ERP/POS con facturación AFIP y soluciones
           digitales a medida listas para operar en la nube o en servidor local.
         </p>
 
         <!-- Botones de Acción (CTAs) -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 font-sans">
           <a
-            href="#proyectos"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-400 hover:shadow-[0_0_30px_rgba(16,185,129,0.38)] active:scale-95 transition-all duration-200 shadow-sm cursor-pointer"
+            href="#soluciones"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-[var(--brand-action)] text-[var(--brand-action-ink)] hover:opacity-90 hover:shadow-[0_0_30px_rgba(166,67,53,0.38)] active:scale-95 transition-all duration-200 shadow-sm cursor-pointer"
           >
             <span>Explorar proyectos</span>
             <ArrowDown class="w-4 h-4" />
@@ -129,28 +162,61 @@ const cardConfigs = [
 
           <a
             href="#contacto"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800 active:scale-95 transition-all duration-200 cursor-pointer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-[var(--surface-card)] hover:bg-[var(--surface-accent-soft)] text-[var(--ink-primary)] border border-[var(--border-hairline)] active:scale-95 transition-all duration-200 cursor-pointer"
           >
             <span>Consultar desarrollo</span>
-            <MessageSquare class="w-4 h-4 text-emerald-500" />
+            <MessageSquare class="w-4 h-4 text-[var(--pampa-arcilla)]" />
           </a>
+        </div>
+
+        <!-- 5ª Tarjeta: Turnos de Farmacias (Desktop xl:, centrada debajo de los botones para equilibrar la composición) -->
+        <div
+          class="hidden xl:block mt-12 self-center w-[255px] 2xl:w-[285px]"
+          :style="getParallaxStyle(0.95)"
+        >
+          <ProjectFloatingCard
+            :project="PROJECTS[4]!"
+            aspect-class="aspect-[16/10]"
+          />
         </div>
       </div>
 
-      <!-- Distribución de las 4 Tarjetas Flotantes:
-           - En xl: Flotando en esquinas con Parallax suave de 60fps
-           - En < xl: Grilla limpia y ordenada de 1 a 2 columnas debajo del texto
-      -->
-      <div
-        class="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto xl:mt-0 xl:max-w-none xl:static"
-      >
+      <!-- Columna 3 (Derecha — 2 tarjetas: MiAgenda y Sistemas a Medida) -->
+      <div class="hidden xl:flex flex-col justify-between self-stretch py-4 gap-16">
+        <!-- Arriba (self-end mr-4): Card 2 (MiAgenda SaaS) -->
         <div
-          v-for="config in cardConfigs"
-          :key="config.project.id"
-          :class="config.wrapperClass"
-          :style="getParallaxStyle(config.depth)"
+          class="self-end mr-4 w-[225px] 2xl:w-[250px]"
+          :style="getParallaxStyle(1.15)"
         >
-          <ProjectFloatingCard :project="config.project" />
+          <ProjectFloatingCard
+            :project="PROJECTS[1]!"
+            aspect-class="aspect-[4/3]"
+          />
+        </div>
+
+        <!-- Abajo (self-start ml-4): Card 4 (Sistemas a Medida / Agencias) -->
+        <div
+          class="self-start ml-4 w-[245px] 2xl:w-[270px]"
+          :style="getParallaxStyle(0.9)"
+        >
+          <ProjectFloatingCard
+            :project="PROJECTS[3]!"
+            aspect-class="aspect-[16/10]"
+          />
+        </div>
+      </div>
+
+      <!-- Mobile / Tablet (< xl): Grilla responsiva limpia de las 5 tarjetas debajo del texto -->
+      <div class="xl:hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto mt-12 w-full">
+        <div
+          v-for="card in mobileCards"
+          :key="card.project.id"
+          class="w-full"
+        >
+          <ProjectFloatingCard
+            :project="card.project"
+            :aspect-class="card.aspectClass"
+          />
         </div>
       </div>
     </div>

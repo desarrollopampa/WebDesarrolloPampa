@@ -9,7 +9,7 @@ export interface UiState {
 
 export const useUiStore = defineStore('ui', {
   state: (): UiState => ({
-    isDark: true,
+    isDark: false,
     selectedProject: null,
     isDrawerOpen: false,
   }),
@@ -20,7 +20,7 @@ export const useUiStore = defineStore('ui', {
       if (storedTheme !== null) {
         this.isDark = storedTheme === 'dark'
       } else {
-        this.isDark = true
+        this.isDark = false
       }
       this.applyTheme()
     },
