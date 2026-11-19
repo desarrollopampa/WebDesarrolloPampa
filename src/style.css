@@ -1,50 +1,80 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --color-petroleo: #103B3F;
+  --color-petroleo-2: #174649;
+  --color-petroleo-3: #1E5A5E;
+  --color-lima: #D6F46A;
+  --color-lima-osc: #5E7A12;
+  --color-cielo: #A9C8F5;
+  --color-cielo-osc: #2F5FA8;
+  --color-durazno: #F4A27C;
+  --color-durazno-osc: #9A4520;
+  --color-niebla: #F4F6F0;
+  --color-niebla-2: #E6EAE1;
+  --color-grafito: #202B2D;
+  --color-grafito-2: #4A5658;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
 
 html {
   scroll-behavior: smooth;
+  background: var(--color-petroleo);
 }
 
-:root {
-  --pampa-emerald: #10b981;
-  --pampa-forest: #064e3b;
-  --pampa-glow: rgba(16, 185, 129, 0.18);
+body {
+  margin: 0;
+  background: var(--color-niebla);
+  color: var(--color-grafito);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
-@theme {
-  --color-pampa-emerald: var(--pampa-emerald);
-  --color-pampa-forest: var(--pampa-forest);
-  --color-pampa-glow: var(--pampa-glow);
+::selection {
+  background: var(--color-lima);
+  color: var(--color-petroleo);
 }
 
-/* Cuadrícula técnica sutil de 48px x 48px */
-.bg-pampa-grid {
-  background-size: 48px 48px;
-  background-image:
-    linear-gradient(to right, rgba(16, 185, 129, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(16, 185, 129, 0.08) 1px, transparent 1px);
+:focus-visible {
+  outline: 2px solid var(--color-lima);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
-:where(.dark, .dark *) .bg-pampa-grid,
-.dark .bg-pampa-grid {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+.surco {
+  background-image: repeating-linear-gradient(
+    -38deg,
+    currentColor 0 2px,
+    transparent 2px 11px
+  );
 }
 
-/* Efecto glassmorphism (estilo Lightspark en claro, estilo Pryzm en oscuro) */
-.glass-card {
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(229, 231, 235, 0.8);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+@keyframes cinta {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-:where(.dark, .dark *) .glass-card,
-.dark .glass-card {
-  background-color: rgba(15, 23, 20, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.4);
+.cinta-track {
+  animation: cinta 38s linear infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cinta-track { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
